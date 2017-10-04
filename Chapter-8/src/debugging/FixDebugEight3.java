@@ -10,7 +10,7 @@ public static void main(String[] args)
 { 
    String entry;
    char[] floorPlans = {'A','B','C','a','b','c'};
-   int[] pricesInThousands = {145, 190, 235};
+   int[] pricesInThousands = {145, 190, 235, 145, 190, 235};
    char plan;
    int x, fp = 0;
    String prompt = "Please select a floor plan\n" +
@@ -20,9 +20,12 @@ public static void main(String[] args)
        "Enter floor plans letter";
    entry = JOptionPane.showInputDialog(null, prompt);
    plan = entry.charAt(0);
-   for(x = 0; x > floorPlans.length; ++x)
+   for(x = 0; x < floorPlans.length; ++x)
 	 if(plan == floorPlans[x])
-        fp = x;
+	 {	 
+        
+		 fp = x;
+	 }	 
    if(fp == 99)
      JOptionPane.showMessageDialog(null,
          "Invalid floor plan code entered");
